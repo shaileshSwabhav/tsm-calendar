@@ -1,0 +1,37 @@
+<div class="container-fluid pt-3">
+  <div class="btn-group mb-3" role="group" aria-label="Months">
+    <button type="button" class="btn btn-dark" (click)="showPreviousWeek()">
+      <i class="material-icons">navigate_before</i>
+    </button>
+    <button type="button" class="btn btn-dark" (click)="showNextWeek()">
+      <i class="material-icons">navigate_next</i>
+    </button>
+  </div>
+
+  <div class="table-responsive">
+    <table class='table table-bordered' *ngIf="calendars">
+      <thead>
+        <tr>
+          <th></th>
+          <th *ngFor="let calendar of calendars" class="text-center">
+            <div class="d-flex flex-column">
+              <h3>{{calendar.date | date: 'EEE'}}</h3>
+              <h5>{{calendar.date | date: 'd'}}</h5>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let time of times; let i = index">
+          <td class="text-center day-time">{{time.time}}</td>
+          <ng-container *ngFor="let calendar of time.calendarDays; let j = index">
+            <td class="text-center day-time" (click)="onTimeClick(i, j)"
+              [ngClass]="calendar.isSelected && time.isSelected ? 'bg-purple' : 'bg-lgblue'">
+              {{calendar.date | date: 'dd-MM-yyy'}} @ {{time.time}}
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

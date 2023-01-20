@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --darkorange: #E73A00;
+  --lgorange: #F69037;
+  --orange: #F6430F;
+  --blue: #004DC0;
+  --red: #FC4347;
+  --grey: #aeaeae;
+  --lg-grey: #F2F6F9;
+  --lg-blue: #f0f8ff;
+  --green: #4DBB81;
+  --lg-green: #35DE16;
+  --purple: #BA94D1;
+  --lg-yellow: #F1D459;
+  --grey: #BDBDBD;
+  --dark-teal: #0E5E6F;
+}
+
+.btn-grey {
+  background-color: #f4f4f4;
+  color: #000;
+}
+
+.bg-lgblue {
+  background-color: var(--lg-blue) !important;
+  // background-color: red;
+}
+
+.bg-purple {
+  background-color: var(--purple) !important;
+}

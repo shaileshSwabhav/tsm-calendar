@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tsm-calendar';
+  isMonthVisible: boolean = false
 }
